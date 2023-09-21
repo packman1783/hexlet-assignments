@@ -27,21 +27,22 @@ public class App {
     }
 
     public static String toString(Map<String, Integer> words) {
-        StringBuilder result = new StringBuilder();
+        if (words.isEmpty()) {
+            return "{}";
+        }
 
-        result.append("{\n");
+        StringBuilder result = new StringBuilder("{\n");
 
         for (Map.Entry<String, Integer> word : words.entrySet()) {
-            result.append("  ")
+            result
+                    .append("  ")
                     .append(word.getKey())
-                    .append(":  ")
+                    .append(": ")
                     .append(word.getValue())
                     .append("\n");
         }
 
-        result.append("}");
-
-        return result.toString();
+        return result + "}";
     }
 }
 //END
