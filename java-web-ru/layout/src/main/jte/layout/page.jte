@@ -19,30 +19,22 @@
 
     <body>
 
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container">
-                    <a class="navbar-brand" href="/">Main</a>
+    <header>
+        <div class="custom-navbar">
+            <div class="container">
+                <a href="/">Main</a>
+                <a href="/users">Users</a>
+            </div>
+        </div>
+    </header>
 
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/users">Users</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </nav>
-        </header>
-
-        <div class="container mx-auto p-4 py-md-5">
+        <div >
             ${content}
         </div>
 
-        <footer class="footer mt-auto py-3 bg-light">
-            <div class="">
-                <span class="text-muted">https://github.com/packman1783</span>
+        <footer class="footer mt-auto py-3">
+            <div>
+                <span class="text-muted">My GitHub page https://github.com/packman1783</span>
             </div>
         </footer>
 
