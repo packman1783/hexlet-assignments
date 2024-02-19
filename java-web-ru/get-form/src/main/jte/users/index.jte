@@ -3,17 +3,30 @@
 @param UsersPage page
 
 @template.layout.page(
-    content = @`
-    <form action="/users" method="get">
-        <input type="search" name="term" value="${page.getTerm()}" />
-        <input type="submit" value="Search" />
+content = @`
+    <form action="/users" method="get" class="mb-3 row justify-content-center">
+        <div class="col-lg-6">
+            <input type="search" name="term" value="${page.getTerm()}" class="form-control" placeholder="Search..." />
+        </div>
+        <div class="col-lg-1">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
     </form>
+
     @if(!page.getUsers().isEmpty())
-        @for(var user : page.getUsers())
-            <div class="col-lg-8 mx-auto p-4 py-md-5">
-                <h2>${user.getFirstName()}${" "}${user.getLastName()}</h2>
+        <div class="row justify-content-start">
+            <div class="col-lg-6 mb-4">
+                @for(var user : page.getUsers())
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">${user.getFirstName()} ${user.getLastName()}</h5>
+                        </div>
+                    </div>
+                @endfor
             </div>
-        @endfor
+        </div>
+    @else
+        <p class="col-lg-6-center">No users found</p>
     @endif
 `
 )
