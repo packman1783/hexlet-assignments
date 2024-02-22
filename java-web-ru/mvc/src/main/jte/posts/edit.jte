@@ -14,29 +14,20 @@
         </ul>
     @endif
 
-    <div class="mx-auto p-4 py-md-5 text-center">
-
-    <form action="/posts/${page.getId()}" method="post">
-
-        <div>
-            <label class="form-label m-2 w-50 text-start">
-                Name
-                <input type="text" class="form-control" required name="name" value="${page.getName()}">
-            </label>
-        </div>
-
-        <div>
-            <label class="form-label m-2 w-50 text-start">
-                Body
-                <textarea class="form-control" required name="body" rows="6">${page.getBody()}</textarea>
-
-            </label>
-        </div>
-
-        <input type="submit" class="btn btn-primary" value="Register">
-
-    </form>
-
+    <div class="mx-auto p-4 py-md-5">
+        <form action="/posts/${page.getId()}" method="post">
+            <div class="mb-3">
+                <label class="form-label">
+                    Название
+                    <input type="text" class="form-control" name="name" value="${page.getName()}" />
+                </label>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Содержание</label>
+                <textarea class="form-control" rows="20" cols="70" type="text" name="body">${page.getBody()}</textarea>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Сохранить" />
+        </form>
     </div>
     `
 )
