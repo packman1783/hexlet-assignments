@@ -30,6 +30,7 @@
     @endif
 
         <nav aria-label="All posts" class="container mt-5">
+
             <table class="table">
                 <tr>
                     <td>
