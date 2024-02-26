@@ -30,15 +30,11 @@ public final class App {
         });
 
         app.get("/users/{id}", ctx -> {
-            var id = ctx.pathParamAsClass("id", Long.class).getOrDefault(null);
+            var id = ctx.pathParamAsClass("id", Long.class).get();
             User users = USERS.stream()
                     .filter(u -> u.getId() == id)
                     .findFirst()
-                    .orElse(null);
-
-            if (users == null) {
-                throw new NotFoundResponse("User not found");
-            }
+                    .orElseThrow(() -> new NotFoundResponse("User not found"));
 
             var page = new UserPage(users);
             ctx.render("users/show.jte", Collections.singletonMap("page", page));

@@ -15,11 +15,22 @@
           crossorigin="anonymous">
 
 </head>
-<body>
-<main>
-      <div class="col-lg-8 mx-auto p-4 py-md-5">
-          <h2>${page.getUser().getId()}${") "}${page.getUser().getFirstName()}${" "}${page.getUser().getLastName()}${" ("}${page.getUser().getEmail()}${")"}</h2>
-      </div>
-</main>
-</body>
+    <body>
+        <main>
+            <div class="mx-auto p-4 py-md-5">
+                <div class="mb-3">
+                    User Id: ${page.getUser().getId()}
+                </div>
+                <div class="mb-3">
+                    FirsName: ${page.getUser().getFirstName()}
+                </div>
+                <div class="mb-3">
+                    LastName: ${page.getUser().getLastName()}
+                </div>
+                <div class="mb-3">
+                    Email: ${page.getUser().getEmail()}
+                </div>
+            </div>
+        </main>
+    </body>
 </html>

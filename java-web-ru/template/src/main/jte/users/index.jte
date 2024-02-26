@@ -15,17 +15,29 @@
           crossorigin="anonymous">
 
 </head>
-<body>
-    <main>
-        @if(page.getUsers().isEmpty())
-            <p>Пока не добавлено ни одного курса</p>
-        @else
-            @for(var user : page.getUsers())
-                <div class="col-lg-8 mx-auto p-4 py-md-5">
-                    <h2><a href="/users/${user.getId()}">${user.getFirstName()}${" "}${user.getLastName()}${" "}${user.getEmail()}</a></h2>
-                </div>
-            @endfor
-        @endif
-    </main>
-</body>
+    <body>
+        <main>
+            <h1>Users</h1>
+            @if(page.getUsers().isEmpty())
+                <p>No users found</p>
+            @else
+                <table class="table table-bordered table">
+                    <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>User name</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @for(var user : page.getUsers())
+                        <tr>
+                            <td>${user.getId()}</td>
+                            <td><a href="/users/${user.getId()}">${user.getFirstName()} ${user.getLastName()}</a></td>
+                        </tr>
+                    @endfor
+                    </tbody>
+                </table>
+            @endif
+        </main>
+    </body>
 </html>
