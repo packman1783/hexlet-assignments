@@ -6,8 +6,6 @@
 @template.layout.page(
     page = page,
     content = @`
-    <div class="mx-auto p-4 py-md-5">
-        <main>
             <h1>Все посты</h1>
 
             <div class="mb-3">
@@ -29,8 +27,6 @@
                     </tr>
                 @endfor
             </table>
-        </main>
-    </div>
     `
 )
 

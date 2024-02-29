@@ -1,4 +1,5 @@
 @import exercise.dto.BasePage
+@import exercise.util.NamedRoutes
 @import gg.jte.Content
 
 @param Content content
@@ -19,17 +20,31 @@
     <title>Hello Hexlet!</title>
 
 </head>
+    <body>
 
-    <main>
-        @if(page != null && page.getFlash() != null)
-            <div class="alert alert-dismissible alert-success" role="alert">
-                <p>${page.getFlash()}</p>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="${NamedRoutes.rootPath()}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${NamedRoutes.postsPath()}">Posts</a>
+                    </li>
+                </ul>
             </div>
-        @endif
-        <div>
-            ${content}
-        </div>
-    </main>
+        </nav>
 
+            @if(page != null && page.getFlash() != null)
+                <div class="alert alert-dismissible alert-success" role="alert">
+                    <p>${page.getFlash()}</p>
+                </div>
+            @endif
+
+            <div class="mx-auto p-4 py-md-5">
+                ${content}
+            </div>
+
+    </body>
 </html>
 <!-- END -->
