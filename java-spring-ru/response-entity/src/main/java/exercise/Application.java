@@ -1,13 +1,10 @@
 package exercise;
 
-import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,7 +29,8 @@ public class Application {
 
     // BEGIN
     @GetMapping("/posts")
-    public ResponseEntity<List<Post>> index(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10") Integer limit) {
+    public ResponseEntity<List<Post>> index(@RequestParam(defaultValue = "1") Integer page,
+                                            @RequestParam(defaultValue = "10") Integer limit) {
         var result = posts.stream()
                 .skip((long) (page - 1) * limit)
                 .limit(limit)
