@@ -70,7 +70,7 @@ public class Application {
             post.setBody(data.getBody());
             return ResponseEntity.ok().body(post);
         } else {
-            return ResponseEntity.status(404).body(data);
+            return ResponseEntity.status(204).body(data);
         }
     }
     // END
