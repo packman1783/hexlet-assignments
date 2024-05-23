@@ -13,7 +13,7 @@ public class WelcomeController {
 
     @GetMapping(path = "/welcome")
     public String getWelcome() {
-        Daytime daytimeName = daytime;
+        String daytimeName = daytime.getName();
 
         return "It is " + daytimeName + " now! Welcome to Spring!";
     }
