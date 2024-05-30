@@ -16,7 +16,7 @@ import exercise.model.Car;
     uses = {JsonNullableMapper.class},
     nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
     componentModel = MappingConstants.ComponentModel.SPRING,
-    unmappedSourcePolicy = ReportingPolicy.IGNORE
+    unmappedTargetPolicy = ReportingPolicy.IGNORE
 )
 public abstract class CarMapper {
     public abstract void update(CarUpdateDTO dto, @MappingTarget Car model);
