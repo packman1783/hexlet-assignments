@@ -3,8 +3,6 @@ package exercise.controller;
 import exercise.dto.AuthorDTO;
 import exercise.dto.AuthorCreateDTO;
 import exercise.dto.AuthorUpdateDTO;
-import exercise.mapper.AuthorMapper;
-import exercise.repository.AuthorRepository;
 import exercise.service.AuthorService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
