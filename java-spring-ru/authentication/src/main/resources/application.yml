@@ -1,0 +1,17 @@
+---
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  output:
+    ansi:
+      enabled: always
+
+# BEGIN
+rsa:
+  private-key: classpath:certs/private_key_pkcs8.pem
+  public-key: classpath:certs/public.pem
+
+# END
