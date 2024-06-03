@@ -11,7 +11,7 @@ spring:
 
 # BEGIN
 rsa:
-  private-key: classpath:certs/private_key_pkcs8.pem
+  private-key: classpath:certs/private.pem
   public-key: classpath:certs/public.pem
 
 # END
