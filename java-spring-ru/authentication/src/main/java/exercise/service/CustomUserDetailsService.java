@@ -14,15 +14,13 @@ public class CustomUserDetailsService implements UserDetailsManager {
     private UserRepository userRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String email) {
-        var user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-
-        return user;
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("User with email " + email + " not found"));
     }
 
     @Override
-    public void createUser(UserDetails userData) {
+    public void createUser(UserDetails user) {
         throw new UnsupportedOperationException("Unimplemented method 'createUser'");
     }
 
@@ -32,7 +30,7 @@ public class CustomUserDetailsService implements UserDetailsManager {
     }
 
     @Override
-    public void deleteUser(String userName) {
+    public void deleteUser(String username) {
         throw new UnsupportedOperationException("Unimplemented method 'deleteUser'");
     }
 
@@ -42,7 +40,7 @@ public class CustomUserDetailsService implements UserDetailsManager {
     }
 
     @Override
-    public boolean userExists(String userName) {
+    public boolean userExists(String username) {
         throw new UnsupportedOperationException("Unimplemented method 'userExists'");
     }
 }

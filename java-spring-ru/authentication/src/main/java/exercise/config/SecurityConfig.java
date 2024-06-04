@@ -33,6 +33,7 @@ public class SecurityConfig {
     @Autowired
     private CustomUserDetailsService userService;
 
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http, HandlerMappingIntrospector introspector)
             throws Exception {
         return http
