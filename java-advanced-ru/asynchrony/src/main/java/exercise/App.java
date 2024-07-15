@@ -2,7 +2,6 @@ package exercise;
 
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
-import java.util.Arrays;
 import java.nio.file.Paths;
 import java.nio.file.Path;
 import java.nio.file.Files;
